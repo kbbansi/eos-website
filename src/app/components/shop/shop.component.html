@@ -1,1 +1,54 @@
-<p>shop works!</p>
+<header class="site-header sticky-top py-1">
+    <nav class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="#" aria-label="Product">
+            <p>E.O.S Adinkrah Enterprise</p>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" [routerLink]="['/']">Home</a>
+        <a class="py-2 d-none d-md-inline-block" [routerLink]="['/shop']">Cart</a>
+        <a class="py-2 d-none d-md-inline-block" [routerLink]="['/register']">My Account</a>
+        <a class="py-2 d-none d-md-inline-block" [routerLink]="['/']">Logout</a>
+    </nav>
+</header>
+<main>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">shopping Spree!!</h1>
+                <p class="lead text-muted">Shop from our prestigous collection of kente</p>
+                <p>
+                    <a [routerLink]="['/products']" class="btn btn-primary my-2">Kente for Men</a> |
+                    <a [routerLink]="['']" class="btn btn-secondary my-2">Kente for Women</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" *ngIf="products.length > 0">
+                <div class="col" *ngFor="let p of products">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="40%" y="50%" fill="#eceeef"
+                                dy=".3em">{{p.productName}}</text>
+                        </svg>
+
+                        <div class="card-body">
+                            <p class="card-text">{{p.description}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart()">Add to Cart</button>
+                                </div>
+                                <small class="text-bold fs-6 fw-bold">GHC{{p.price}}</small>
+                                <small class="text-muted">Stock: {{p.stock}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
