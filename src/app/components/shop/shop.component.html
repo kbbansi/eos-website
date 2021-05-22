@@ -24,9 +24,11 @@
         </div>
     </section>
     <section class="py-5 text-align-left container" *ngIf="categories.length > 0">
-        <nav class="container d-flex flex-column flex-md-row justify-content-between" *ngFor="let c of categories">
-            <a class="py-2 d-none d-md-inline-block nav-link" routerLink="category/{{c.id}}">{{c.categoryName}}</a>
-        </nav>
+        <ul class="nav">
+            <li class="nav-item" *ngFor="let c of categories">
+                <a class="py-2 d-none d-md-inline-block nav-link" routerLink="category/{{c.id}}">{{c.categoryName}}</a>
+            </li>
+        </ul>
     </section>
     <router-outlet></router-outlet>
 </main>

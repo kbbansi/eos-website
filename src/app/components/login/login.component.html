@@ -9,10 +9,11 @@
         <a class="py-2 d-none d-md-inline-block" [routerLink]="['/login']">Login</a>
     </nav>
 </header>
+
 <main>
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom">
-            <span class="fs-4 d-flex align-items-center text-dark text-decoration-none">Create an account</span>
+            <span class="fs-4 d-flex align-items-center text-dark text-decoration-none">Login</span>
         </header>
 
         <!-- <div class="p-5 mb-4 bg-light rounded-3">
@@ -24,36 +25,20 @@
         <div class="row align-items-md-stretch">
             <div class="col-md-6">
                 <div class="h-100 p-5 text-white bg-dark rounded-3">
-                    <h6>Register Below</h6>
-                    <form [formGroup]="registerForm">
+                    <h6>Enter your user credentials</h6>
+                    <form [formGroup]="loginForm">
                         <div class="mb-3">
-                            <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" placeholder="Akua" formControlName="firstName">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" placeholder="Mansa" formControlName="lastName">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" placeholder="akuamansa@something.com" formControlName="email">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">User Name</label>
-                            <input type="text" class="form-control" placeholder="SisterAkus" formControlName="userName">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="akuamansa@something.com" formControlName="email">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Password</label>
-                            <input type="password" class="form-control" formControlName="password">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Contact No</label>
-                            <input type="tel" class="form-control" placeholder="024000000" formControlName="contactNo">
+                            <input type="password" class="form-control" placeholder="xxxxxxx" formControlName="password">
                         </div>
                         <div class="mb-3">
                             <div class="row">
                                 <div class="col">
-                                    <button class="w-30 btn btn-primary btn-lg" (click)="register()">Register</button>
+                                    <button class="w-30 btn btn-primary btn-lg" (click)="login()">Login</button>
                                 </div>
                             </div>
                         </div>
