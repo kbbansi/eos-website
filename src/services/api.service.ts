@@ -15,6 +15,10 @@ export class ApiService {
     return this.https.get(this.api + 'product', {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
   }
 
+  getAllCategories() {
+    return this.https.get(this.api + 'category', {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
+  }
+
   getUserDetails(id){}
 
   private static ErrHandle(error: HttpErrorResponse) {

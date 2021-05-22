@@ -2,21 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/services/api.service';
 
 @Component({
-  selector: 'app-shop',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
-export class ShopComponent implements OnInit {
+export class ProductsComponent implements OnInit {
   dataBucket: any = {};
   products: any = {};
-  categories: any = {};
   counter: number = 0;
 
   constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
-    this.getAllCategories();
   }
 
   getAllProducts() {
@@ -30,20 +28,11 @@ export class ShopComponent implements OnInit {
     })
   }
 
-  getAllCategories() {
-    console.log('Fetching Categories......');
-    this.api.getAllCategories().subscribe(response => {
-      console.log(response);
-      this.dataBucket = response;
-      this.categories = this.dataBucket.message;
-      console.log(this.categories);
-    })
-  }
-
   addToCart() {
     alert('Added to cart!');
     this.counter++;
     console.log(this.counter);
   }
+
 
 }

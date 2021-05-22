@@ -11,6 +11,9 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductTagComponent } from './components/product-tag/product-tag.component';
+import { ProductCategoryComponent } from './components/product-category/product-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductDetailsComponent,
     CheckoutCartComponent,
     AuthenticationComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ProductsComponent,
+    ProductTagComponent,
+    ProductCategoryComponent
   ],
   imports: [
     BrowserModule,
