@@ -23,12 +23,10 @@
             </div>
         </div>
     </section>
-    <section class="py-5 text-align-left container">
-        <select class="form-select" aria-label="Category list" *ngIf="categories.length > 0">
-            <option *ngFor="let c of categories" value="{{c.id}}">
-                <a routerLink="category/{{c.id}}">{{c.categoryName}}</a>
-            </option>
-          </select>
+    <section class="py-5 text-align-left container" *ngIf="categories.length > 0">
+        <nav class="container d-flex flex-column flex-md-row justify-content-between" *ngFor="let c of categories">
+            <a class="py-2 d-none d-md-inline-block nav-link" routerLink="category/{{c.id}}">{{c.categoryName}}</a>
+        </nav>
     </section>
     <router-outlet></router-outlet>
 </main>
