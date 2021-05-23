@@ -23,6 +23,10 @@ export class ApiService {
     return this.https.get(this.api + 'category/product/' + id, {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
   }
 
+  getOneProduct(id) {
+    return this.https.get(this.api + 'product/' + id, {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
+  }
+
   getUserDetails(id){}
 
   private static ErrHandle(error: HttpErrorResponse) {
