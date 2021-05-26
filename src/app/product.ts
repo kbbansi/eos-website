@@ -9,4 +9,5 @@ export interface Product {
     productImage: string;
     quantity: number;
     total: number;
+    userID: number;
 }

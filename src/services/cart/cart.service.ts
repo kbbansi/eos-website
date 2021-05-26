@@ -15,6 +15,7 @@ export class CartService {
     let total = product.price;
     product.total = total;
     product.quantity = Number(count);
+    product.userID = Number(sessionStorage.getItem('id'));
     this.items.push(product);
     console.log(product.quantity);
     console.log(this.items);

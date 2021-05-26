@@ -29,6 +29,10 @@ export class ApiService {
 
   getUserDetails(id){}
 
+  placeOrder(d) {
+    return this.https.post(this.api + 'orders/create', d, {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
+  }
+
   private static ErrHandle(error: HttpErrorResponse) {
     if (error.error  instanceof ErrorEvent) {
       // client error
