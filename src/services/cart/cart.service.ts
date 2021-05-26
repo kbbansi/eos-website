@@ -55,6 +55,7 @@ export class CartService {
 
   clearCart(){
     this.items = [];
+    location.reload();
     return this.items;
   }
 

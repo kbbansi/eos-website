@@ -39,7 +39,6 @@ export class CheckoutCartComponent implements OnInit {
   clearCart() {
     this.cart.clearCart();
     alert('Clearing cart....');
-    location.reload();
   }
 
   checkingOut() {
@@ -74,5 +73,9 @@ export class CheckoutCartComponent implements OnInit {
     } else {
       alert('You need to Login to checkout');
     }
+  }
+
+  payStack(){
+    alert('Calling PayStack Now')
   }
 }

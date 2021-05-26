@@ -22,31 +22,6 @@
             </div>
             <span class="text-muted">GHC {{i.price}}</span>
           </li>
-          <!-- <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">Second product</h6>
-                      <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$8</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between lh-sm">
-                    <div>
-                      <h6 class="my-0">Third item</h6>
-                      <small class="text-muted">Brief description</small>
-                    </div>
-                    <span class="text-muted">$5</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success">
-                      <h6 class="my-0">Promo code</h6>
-                      <small>EXAMPLECODE</small>
-                    </div>
-                    <span class="text-success">−$5</span>
-                  </li>
-                  <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (USD)</span>
-                    <strong>$20</strong>
-                  </li> -->
         </ul>
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (GHC)</span>
@@ -54,8 +29,26 @@
         </li>
         <form class="card p-2">
           <div class="btn-group">
-            <button type="submit" class="btn btn-sm btn-primary" (click)="checkingOut()">Checkout</button> | 
+            <!-- (click)="checkingOut()" -->
+            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Checkout</button> | 
             <button type="submit" class="btn btn-sm btn-secondary" (click)="clearCart()">Clear the Cart</button>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Payment Option</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Pay Now or Pay on Delivery
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="payStack()">PayNow</button>
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="checkingOut()">Pay On Delivery</button>
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
