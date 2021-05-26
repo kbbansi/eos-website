@@ -6,11 +6,17 @@ import { Product } from 'src/app/product';
 })
 export class CartService {
   items: Product[] = [];
+  
   constructor() { }
 
   //add to cart method
   addToCart(product: Product){
+    let count = 1
+    let total = product.price;
+    product.total = total;
+    product.quantity = Number(count);
     this.items.push(product);
+    console.log(product.quantity);
     console.log(this.items);
   }
 
@@ -20,8 +26,39 @@ export class CartService {
     return this.items;
   }
 
+  increaseQuantity(product: Product){
+    console.log(product.id)
+    if (product.quantity === product.stock) {
+      alert('You\'ve cleared out the stock!!!')
+        // disable increase button
+    } else {
+      product.quantity = product.quantity + 1;
+      product.total = product.total + product.total;
+      console.log(product.quantity);
+      console.log(product.total); 
+    }
+  }
+
+  decreaseQuantity(product: Product){
+    console.log(product.id);
+    if (product.quantity < 0) {
+      alert('Removed product from cart');
+      this.clearCart();
+    } else {
+      product.quantity = product.quantity - 1;
+      product.total = product.total - product.total;
+      console.log(product.quantity);
+      console.log(product.total); 
+    }
+  }
+
   clearCart(){
     this.items = [];
     return this.items;
+  }
+
+  calculateTotal(product: Product) {
+    console.log(product);
+    console.log(product.price)
   }
 }

@@ -37,6 +37,13 @@ export class ProductDetailsComponent implements OnInit {
     this.cart.addToCart(product);
     window.alert('Product Added to Cart');
   }
+
+  increaseQuantiy(product: Product) {
+    this.cart.increaseQuantity(product);
+  }
   
+  decreaseQuantity(product: Product) {
+    this.cart.decreaseQuantity(product);
+  }
 
 }

@@ -8,7 +8,8 @@ import { CartService } from 'src/services/cart/cart.service';
   styleUrls: ['./checkout-cart.component.css']
 })
 export class CheckoutCartComponent implements OnInit {
-  
+  productImage: any = {};
+  total: number;
   constructor(private router: Router, private cart: CartService) { }
 
   item = this.cart.getItems();
@@ -18,6 +19,29 @@ export class CheckoutCartComponent implements OnInit {
 
   goBack(){
     this.router.navigate(['/shop'])
+  }
+
+  getDetails(data: any) {
+    console.log(data);
+    this.productImage = data.productImage;
+    if (data) {
+      this.total = data.total;
+      console.log(this.total);
+      console.log(this.productImage);
+    } else {
+      this.total = 0;
+    }
+  }
+
+  checkingOut(){
+    console.log('Yeaaa.....');
+    alert('Checking out.....')
+  }
+
+  clearCart() {
+    this.cart.clearCart();
+    alert('Clearing cart....');
+    location.reload();
   }
 
 }

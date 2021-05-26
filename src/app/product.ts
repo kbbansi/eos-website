@@ -7,5 +7,6 @@ export interface Product {
     createdOn: string;
     stock: number;
     productImage: string;
-    
+    quantity: number;
+    total: number;
 }

@@ -28,6 +28,7 @@
                     <h3> Price: GHC {{product.price}} </h3>
                     <h4> Category: {{product.category}} </h4>
                     <p> Description: {{product.description}} </p>
+                    <p>Quantity: {{ product.quantity }}</p>
                     
                     <div class="d-flex justify-content-between align-items-right">
                         <!-- <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(product)">Add to Cart</button> -->
@@ -35,7 +36,9 @@
                             <button type="button" class="btn btn-sm btn-secondary" (click)="addToCart(product)">Add to Cart</button> |
                             <a routerLink="/view-cart" type="button" class="btn btn-sm btn-primary">
                                 View Cart
-                            </a>
+                            </a> | 
+                            <button type="button" class="btn btn-sm btn-secondary" (click)="increaseQuantiy(product)">Increase</button> | 
+                            <button type="button" class="btn btn-sm btn-secondary" (click)="decreaseQuantity(product)">Decrease</button>
                         </div>
                     </div>
                 </div>
