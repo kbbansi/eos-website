@@ -34,7 +34,7 @@ export class CartService {
         // disable increase button
     } else {
       product.quantity = product.quantity + 1;
-      product.total = product.total + product.total;
+      product.total = product.quantity * product.price; // change to quantity * price
       console.log(product.quantity);
       console.log(product.total); 
     }

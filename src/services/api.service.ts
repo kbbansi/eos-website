@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
   api = environment.SERVER_URL;
+  paymentApi = environment.paymentAPI;
   constructor(private https: HttpClient) { }
 
   getAllProducts(){
@@ -31,6 +32,10 @@ export class ApiService {
 
   placeOrder(d) {
     return this.https.post(this.api + 'orders/create', d, {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
+  }
+
+  makePayment(d) {
+    return this.https.post(this.paymentApi + 'paystack/pay', d, {observe: 'body'}).pipe(catchError(ApiService.ErrHandle));
   }
 
   private static ErrHandle(error: HttpErrorResponse) {
