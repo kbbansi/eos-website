@@ -55,7 +55,6 @@ export class UserAccountComponent implements OnInit {
     console.log('Bye Bye %s', this.firstName);
     sessionStorage.clear();
     this.router.navigate(['/'])
-
   }
 
 }
