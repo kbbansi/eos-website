@@ -84,7 +84,7 @@ export class CheckoutCartComponent implements OnInit {
           }
         })
       }
-      this.cart.clearCart();
+      this.clearCart();
     } else {
       alert('You need to Login to checkout');
     }
